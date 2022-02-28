@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+body {
+	background: linear-gradient(
+		to right,
+		rgba(95, 73, 73, 0.637),
+		rgba(132, 0, 255, 0.534)
+	);
+	min-height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainParent {
+	width: 350px;
+	background: rgba(255, 255, 255, 0.281);
+	padding: 2rem;
+	border-radius: 10px;
+	box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.result {
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	padding: 1rem;
+	border-radius: 10px;
+	box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
+	font-weight: bolder;
+
+	display: flex;
+	justify-content: flex-end;
+	overflow:hidden;
+	color: rgb(146, 141, 64);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.items {
+	margin-top: 1rem;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas:
+		"clear clean divide multi"
+		"no7 no8 no9 plus"
+		"no4 no5 no6 minus"
+		"no1 no2 no3 ans"
+		"dot no0 no0 ans ";
 }
 
-.App-link {
-  color: #61dafb;
+.items > button {
+	min-height: 70px;
+	border: none;
+	box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
+	/* border-radius: 50%; */
+	font-size: 1.3rem;
+	font-weight: bolder;
+	color: rgb(146, 141, 64);
+	background: rgba(255, 255, 255, 0.404);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.items > button:hover {
+	cursor: pointer;
+	background: rgba(255, 0, 0, 0.5);
+	color: black;
+}
+
+.clear {
+	grid-area: clear;
+}
+.clean {
+	grid-area: clean;
+}
+.divide {
+	grid-area: divide;
+}
+.multi {
+	grid-area: multi;
+}
+.plus {
+	grid-area: plus;
+}
+.minus {
+	grid-area: minus;
+}
+.no-9 {
+	grid-area: no9;
+}
+.no-8 {
+	grid-area: no8;
+}
+.no-7 {
+	grid-area: no7;
+}
+.no-6 {
+	grid-area: no6;
+}
+.no-5 {
+	grid-area: no5;
+}
+.no-4 {
+	grid-area: no4;
+}
+.no-3 {
+	grid-area: no3;
+}
+.no-2 {
+	grid-area: no2;
+}
+.no-1 {
+	grid-area: no1;
+}
+.no-0 {
+	grid-area: no0;
+}
+.dot {
+	grid-area: dot;
+}
+.ans {
+	grid-area: ans;
+}
+
+.prank {
+	animation: shake 0.3s ease-in;
+}
+
+@keyframes shake {
+	0% {
+		transform: translateX(10px);
+	}
+	50% {
+		transform: translateX(-10px);
+	}
+	75% {
+		transform: translateX(10px);
+	}
+	100% {
+		transform: translateX(-10px);
+	}
 }
